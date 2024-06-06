@@ -46,8 +46,8 @@ module.exports = {
 			friday: "Friday",
 			saturday: "Saturday",
 			sunday: "Sunday",
-			alreadyReceived: "𝙔𝙊𝙐 𝘼𝙇𝙍𝙀𝘼𝙏𝙔 𝙍𝙀𝙎𝙀𝙑𝙀 𝙔𝙊𝙐𝙍 𝙈𝙊𝙉𝙀𝙔💵\n-----------------------\n 🏷𝙏𝙔𝙋𝙀 𝘽𝘼𝙇 𝙏𝙊 𝙎𝙀𝙀 🏷",
-			received: " ♣️| MON BOSS DARKEN GREY T'AS DONNER DU FRIC💵 {%1}\n________________________\n 𝘿𝙊𝙇𝙇𝘼 💲 American 𝘼𝙉𝘿  <%2> 𝙀𝙓𝙋 \n________________________\n 💲𝙈𝙊𝙉𝙀𝙔 𝙂𝘼𝙈𝙀 💲 "
+			alreadyReceived: "you received virtual money given by me, take advantage of it.\n✿❯────「✿」────❮✿\n ஜ۩۞۩ஜ use .bal to view your account ஜ۩۞۩ஜ",
+			received: " ✿❯─「✿」─❮✿| you received virtual money 💰 from Kitty IA enjoy it ! {%1}\n✿❯────「✿」────❮✿\n Euro € French and <%2> EXP \n✿❯────「✿」────❮✿\n € gambling  "
 		}
 	},
 
