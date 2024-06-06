@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 🐐 | GoatBot V2 ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
+const doNotDelete = "[ ۩۩ | GoatBot V2 ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
 
 module.exports = {
   config: {
@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `_______________⤴\n   🌹𝗭𝗲𝘂𝘀 𝘇𝗲𝗻𝗼🌹 \n_____________⤴`; // replace with your name 
+      msg += `✿❯────「✿」────❮✿⤴\n   ஜ۩۞۩ஜ Kitty IA ஜ۩۞۩ஜ \n✿❯────「✿」────❮✿⤴`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -46,31 +46,26 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n=======>\n│ ⏎  ${category.toUpperCase()}  ⏎`;
+          msg += `\n━─━─━≫\n│ ⏎  ${category.toUpperCase()}  ⏎`;
 
 
           const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
-            const cmds = names.slice(i, i + 3).map((item) => `❄${item}`);
+            const cmds = names.slice(i, i + 3).map((item) => `ஜ۩۞۩ஜ${item}`);
             msg += `\n│ ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
           }
 
-          msg += `\n========>`;
+          msg += `\n━─━─━≫`;
         }
       });
 
       const totalCommands = commands.size;
-      msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
-      msg += `𝗧𝘆𝗽𝗲 ${prefix} 𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
-      msg += `🐐 | GoatBot V2`; // its not decoy so change it if you want 
+      msg += `\nCurrently, the bot has ${totalCommands} commands that can be used\n`;
+      msg += `Type ${prefix} .help cmdName to view the details of that command\n`;
+      msg += `۩۩ | GoatBot V2`; // its not decoy so change it if you want 
 
       const helpListImages = [
-        "https://i.imgur.com/KhnL8U8.jpeg", // add image link here
-        "https://i.imgur.com/5IRfh3C.jpeg",
-        "https://i.imgur.com/EHg0xW0.jpeg",
-        "https://i.imgur.com/v8HFO5c.jpeg",
-        "https://i.imgur.com/auavNDT.jpeg",
-        // Add more image links as needed
+       // add image link here  // Add more image links as needed
       ];
 
       const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
@@ -95,21 +90,21 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{p}/g, prefix).replace(/{n}/g, configCommand.name);
 
-        const response = `___________⤴🌹𝙕𝙚𝙪𝙨 𝙯𝙚𝙣𝙤🌹__________⤴
-  ➡❄ ${configCommand.name}
-  ➡❄ 𝙄𝙉𝙁𝙊
-  ➡❄ 𝘿𝙚𝙨𝙘𝙧𝙞𝙥𝙩𝙞𝙤𝙣: ${longDescription}
-  ➡❄ 𝙊𝙩𝙝𝙚𝙧 𝙣𝙖𝙢𝙚𝙨: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}
-  ➡❄ 𝙊𝙩𝙝𝙚𝙧 𝙣𝙖𝙢𝙚𝙨 𝙞𝙣 𝙮𝙤𝙪𝙧 𝙜𝙧𝙤𝙪𝙥: 𝘿𝙤 𝙣𝙤𝙩 𝙝𝙖𝙫𝙚
-  ➡❄ 𝙑𝙚𝙧𝙨𝙞𝙤𝙣: ${configCommand.version || "1.0"}
-  ➡❄ 𝙍𝙤𝙡𝙚: ${roleText}
-  ➡❄ 𝙏𝙞𝙢𝙚 𝙥𝙚𝙧 𝙘𝙤𝙢𝙢𝙖𝙣𝙙: ${configCommand.countDown || 1}s
-  ➡❄ 𝘼𝙪𝙩𝙝𝙤𝙧: ${author}
-  ➡❄ 𝙐𝙨𝙖𝙜𝙚
-  ➡❄ ${usage}
-  ➡❄ 𝙉𝙤𝙩𝙚𝙨
-  ➡❄ 𝙏𝙝𝙚 𝙘𝙤𝙣𝙩𝙚𝙣𝙩 𝙞𝙣𝙨𝙞𝙙𝙚 <𝙓𝙓𝙓𝙓𝙓> 𝙘𝙖𝙣 𝙗𝙚 𝙘𝙝𝙖𝙣𝙜𝙚𝙙
-  ➡❄ 𝙏𝙝𝙚 𝙘𝙤𝙣𝙩𝙚𝙣𝙩 𝙞𝙣𝙨𝙞𝙙𝙚 [𝙖|𝙗|𝙘] 𝙞𝙨 𝙖 𝙤𝙧 𝙗 𝙤𝙧 𝙘 \n_____________________\n 🔖 𝙚𝙙𝙞𝙩𝙚 𝙗𝙮 : 🌹𝙕𝙚𝙪𝙨 𝙯𝙚𝙣𝙤🌹
+        const response = `✿❯────「✿」────❮✿⤴ஜ۩۞۩ஜ Kitty IA ஜ۩۞۩ஜ✿❯────「✿」────❮✿⤴
+  ➡۩۩ ${configCommand.name}
+  ➡۩۩ ℹ️
+  ➡۩۩ Description: ${longDescription}
+  ➡۩۩ Autres noms: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}
+  ➡۩۩ Autres noms inclus dans votre groupe: Aucun
+  ➡۩۩ Version: ${configCommand.version || "1.0"}
+  ➡۩۩ Rôle: ${roleText}
+  ➡۩۩ Temps par commande: ${configCommand.countDown || 1}s
+  ➡۩۩ Auteur: ${author}
+  ➡۩۩ Usage
+  ➡۩۩ ${usage}
+  ➡۩۩ Notes
+  ➡۩۩ Le contenu inclus dans les crochets <XXXXX> peut être modifié
+  ➡۩۩ Le contenu inclus entre crochets [a|b|c] peut être remplacé par a, b ou c.\n✿❯────「✿」────❮✿\n ۩۩ Édité par : ஜ۩۞۩ஜ Kitty IA ஜ۩۞۩ஜ
   `;
 
         await message.reply(response);
