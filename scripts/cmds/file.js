@@ -14,19 +14,19 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, api, event }) {
-    const permission = ["61553436962117"];
+    const permission = ["61550695203372"];
     if (!permission.includes(event.senderID)) {
-      return api.sendMessage("𝙎𝙊𝙍𝙍𝙔 𝙊𝙉𝙇𝙔 [ 👑 DARKEN GRĘY 👑 ]\n_____________________\n can use file {😶}", event.threadID, event.messageID);
+      return api.sendMessage("welcome to the queue 🗂️ [ ༺ Kitty IA ༻ ]\n࿇ ══━━━━✥◈✥━━━━══ ࿇\n give me the file 🗂️", event.threadID, event.messageID);
     }
     
     const fileName = args[0];
     if (!fileName) {
-      return api.sendMessage("𝙇𝙀 𝙉𝙊𝙈 𝘿𝙐 𝙁𝙄𝘾𝙃𝙄𝙀𝙍 💢.", event.threadID, event.messageID);
+      return api.sendMessage("❌ only the administrators who have rights to my file 🗂️ from Kitty IA .", event.threadID, event.messageID);
     }
 
     const filePath = __dirname + `/${fileName}.js`;
     if (!fs.existsSync(filePath)) {
-      return api.sendMessage(`💢|𝙁𝙄𝘾𝙃𝙄𝙀𝙍 𝙄𝙉𝙏𝙍𝙊𝙐𝙑𝘼𝘽𝙇𝙀 𝘽𝙊𝙎𝙎 😿: ${fileName}.js`, event.threadID, event.messageID);
+      return api.sendMessage(`🗂️|file introuvable : ${fileName}.js`, event.threadID, event.messageID);
     }
 
     const fileContent = fs.readFileSync(filePath, 'utf8');
