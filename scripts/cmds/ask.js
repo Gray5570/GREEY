@@ -18,7 +18,7 @@ async function getAIResponse(input, userId, messageID) {
     { url: 'https://ai-chat-gpt-4-lite.onrender.com/api/hercai', params: { question: input } }
   ];
 
-  let response = " ✧✧✧ Que puis-je faire pour vous aujourd'hui ! ✧✧✧.";
+  let response = " ༺ Hello 👋 my name is Kitty IA , I am here to answer your questions just say Ai (and your question) and if you want to see the cmds used { >help }. ༻";
   let currentIndex = 0;
 
   for (let i = 0; i < services.length; i++) {
@@ -39,25 +39,25 @@ module.exports = {
     name: 'ai',
     author: 'Arn',
     role: 0,
-    category: 'ai',
+    category: 'kitty',
     shortDescription: 'ai to ask anything',
   },
   onStart: async function ({ api, event, args }) {
     const input = args.join(' ').trim();
     if (!input) {
-      api.sendMessage(`♠️ DARKEN GRĘY ♠️\n✧✧✧✧✧✧✧✧\nPlease provide a question or statement.\n✧✧✧✧✧✧✧✧✧`, event.threadID, event.messageID);
+      api.sendMessage(`༺ Kitty IA ༻\n ࿇ ══━━━━✥◈✥━━━━══ ࿇ \nPlease provide a question or statement.\n࿇ ══━━━━✥◈✥━━━━══ ࿇`, event.threadID, event.messageID);
       return;
     }
 
     const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-    api.sendMessage(`♠️ DARKEN GRĘY ✧♠️\n✧✧✧✧✧✧✧✧\n${response}\n✧✧✧✧✧✧✧✧✧✧`, event.threadID, messageID);
+    api.sendMessage(`༺ Kitty IA ༻\n࿇ ══━━━━✥◈✥━━━━══ ࿇\n${response}\n࿇ ══━━━━✥◈✥━━━━══ ࿇`, event.threadID, messageID);
   },
   onChat: async function ({ event, message }) {
     const messageContent = event.body.trim().toLowerCase();
     if (messageContent.startsWith("ai")) {
       const input = messageContent.replace(/^ai\s*/, "").trim();
       const { response, messageID } = await getAIResponse(input, event.senderID, message.messageID);
-      message.reply(` ♠️ DARKEN GRĘY ✧♠️\n✧✧✧✧✧✧✧✧✧\n${response}\n✧✧✧✧✧✧✧✧✧✧`, messageID);
+      message.reply(` ༺ Kitty IA ༻\n࿇ ══━━━━✥◈✥━━━━══ ࿇\n${response}\n࿇ ══━━━━✥◈✥━━━━══ ࿇`, messageID);
     }
   }
 };
